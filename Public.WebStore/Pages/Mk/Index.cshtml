@@ -1,0 +1,104 @@
+﻿@page
+@model Public.WebStore.Pages.Mk.MkIndexModel
+@{
+    ViewBag.Title = "Мастер-классы";
+}
+
+<!--== Start Shop Area ==-->
+@for (var i = 0; i < 9; i++)
+{
+    <section class="product-single-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+            <div class="single-product-slider">
+              <div class="single-product-thumb">
+                <div class="">
+                  <div class="">
+                    <div class=" zoom zoom-hover">
+                      <div class="thumb-item">
+                        <a class="lightbox-image" data-fancybox="gallery" href="/img/shop/details/1.jpg">
+                          <img src="/img/shop/details/1.jpg" alt="Image-HasTech">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="single-product-info">
+              <h4 class="title">Jigsaw Puzzles For Kids</h4>
+              <div class="prices">
+                <span class="price">$120.59</span>
+              </div>
+              <div class="product-rating">
+                <div class="rating">
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <div class="review">
+                  <a href="#/">( 5 Customer Review )</a>
+                </div>
+              </div>
+              <div class="single-product-featured">
+                <ul>
+                  <li><i class="fa fa-check"></i> Free Shipping</li>
+                  <li><i class="fa fa-check"></i> Support 24/7</li>
+                  <li><i class="fa fa-check"></i> Money Return</li>
+                </ul>
+              </div>
+              <p class="product-desc">Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisll exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duisol aute irure dolor in reprehenderit.</p>
+              <div class="quick-product-action">
+                <div class="action-top">
+                  <div class="pro-qty">
+                    <input type="text" id="quantity" title="Quantity" value="01" />
+                  </div>
+                  <button class="btn btn-theme">Add to Cart</button>
+                  <a class="btn-wishlist" href="shop-wishlist.html">Add to Wishlist</a>
+                </div>
+              </div>
+              <div class="widget">
+                <h3 class="title">SKU:</h3>
+                <div class="widget-tags">
+                  <span>Ch-256xl</span>
+                </div>
+              </div>
+              <div class="widget">
+                <h3 class="title">Categories:</h3>
+                <div class="widget-tags">
+                  <a href="blog.html">Toys.</a>
+                  <a href="blog.html">Dresss</a>
+                </div>
+              </div>
+              <div class="widget">
+                <h3 class="title">Tag:</h3>
+                <div class="widget-tags">
+                  <a href="blog.html">Toys,</a>
+                  <a href="blog.html">Dress</a>
+                </div>
+              </div>
+              <div class="widget">
+                <h3 class="title">Share:</h3>
+                <div class="widget-tags widget-share">
+                  <span class="fa fa-facebook"></span>
+                  <span class="fa fa-dribbble"></span>
+                  <span class="fa fa-pinterest-p"></span>
+                  <span class="fa fa-twitter"></span>
+                  <span class="fa fa-linkedin"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+}
+
+
+    
+<!--== End Shop Area ==-->

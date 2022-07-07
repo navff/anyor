@@ -1,0 +1,1223 @@
+﻿@page
+@model IndexModel
+@{
+    ViewBag.Title = "Home page";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<main class="main-content">
+    <!--== Start Hero Area Wrapper ==-->
+    <section class="home-slider-area slider-default">
+      <div class="home-slider-content">
+        <div class="swiper-container home-slider-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <!-- Start Slide Item -->
+              <div class="home-slider-item">
+                <div class="thumb-one bg-img" data-bg-img="/img/slider/1.png"></div>
+                <div class="slider-content-area">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="content">
+                          <div class="inner-content">
+                            <h2>Best Kids Store & Online Shop</h2>
+                            <p>Give The Gift Of Your Children Everyday</p>
+                            <a href="shop.html" class="btn-theme">Shop This Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <img class="thumb-two" src="/img/slider/2.png" alt="Image">
+                  <img class="thumb-three" src="/img/slider/3.png" alt="Image">
+                  <img class="thumb-four" src="/img/photos/3.png" alt="Image">
+                </div>
+                <div class="shape-top bg-img" data-bg-img="/img/photos/1.png"></div>
+                <div class="shape-bottom bg-img" data-bg-img="/img/photos/2.png"></div>
+              </div>
+              <!-- End Slide Item -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Hero Area Wrapper ==-->
+
+    <!--== Start Category Area Wrapper ==-->
+    <section class="category-area product-category1-area" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+        <div class="row category-items1">
+          <div class="col-sm-6 col-md-4">
+            <div class="category-item">
+              <div class="thumb thumb-style1">
+                <img src="/img/category/1.png" alt="Image">
+                <div class="content">
+                  <div class="contact-info">
+                    <h2 class="title">Baby Dress</h2>
+                    <h4 class="price">$32.00</h4>
+                  </div>
+                  <a class="btn-link" href="shop.html">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="category-item mt-xs-25">
+              <div class="thumb thumb-style2">
+                <img src="/img/category/2.png" alt="Image">
+                <div class="content">
+                  <div class="contact-info">
+                    <h2 class="title">Baby Toys</h2>
+                    <h4 class="price">$25.00</h4>
+                  </div>
+                  <a class="btn-link" href="shop.html">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="category-item mt-sm-25">
+              <div class="thumb thumb-style3">
+                <img src="/img/category/3.png" alt="Image">
+                <div class="content">
+                  <div class="contact-info">
+                    <h2 class="title">Teddy Bear</h2>
+                    <h4 class="price">$18.00</h4>
+                  </div>
+                  <a class="btn-link" href="shop.html">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Category Area Wrapper ==-->
+
+    <!--== Start Product Tab Area Wrapper ==-->
+    <section class="product-area product-style1-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 m-auto">
+            <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
+              <h2 class="title">New Products</h2>
+              <div class="desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="product-tab-content">
+              <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-duration="1000">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="our-features-tab" data-bs-toggle="tab" data-bs-target="#our-features" type="button" role="tab" aria-controls="our-features" aria-selected="true">All Items</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="best-sellers-tab" data-bs-toggle="tab" data-bs-target="#best-sellers" type="button" role="tab" aria-controls="best-sellers" aria-selected="false">Baby Dress</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link mr-0" id="new-items-tab" data-bs-toggle="tab" data-bs-target="#new-items" type="button" role="tab" aria-controls="new-items" aria-selected="false">Baby Toys</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="myTabContent" data-aos="fade-up" data-aos-duration="1300">
+                <div class="tab-pane fade show active" id="our-features" role="tabpanel" aria-labelledby="our-features-tab">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="product">
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/1.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Funskool Teddy</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/2.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Baby Play Sets</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/3.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Jigsaw Puzzles For Kids</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/4.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Abstract Girl Dress</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/5.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Bruder Toys Mini Ships</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/6.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Abstract Boy Dress</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/7.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Funskool Teddy Pink</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/8.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Toys Box For Baby</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="best-sellers" role="tabpanel" aria-labelledby="best-sellers-tab">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="product">
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/5.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Bruder Toys Mini Ships</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/6.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Abstract Boy Dress</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/7.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Funskool Teddy Pink</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/8.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Toys Box For Baby</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/1.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Funskool Teddy</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/2.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Baby Play Sets</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/3.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Jigsaw Puzzles For Kids</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/4.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Abstract Girl Dress</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="new-items" role="tabpanel" aria-labelledby="new-items-tab">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="product">
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/1.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Funskool Teddy</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/2.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Baby Play Sets</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/3.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Jigsaw Puzzles For Kids</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/4.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Abstract Girl Dress</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/5.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Bruder Toys Mini Ships</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/6.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Abstract Boy Dress</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/7.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Funskool Teddy Pink</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                              <div class="product-thumb">
+                                <img src="/img/shop/8.png" alt="Image">
+                                <div class="product-action">
+                                  <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                                  <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                                  <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                                  <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                                </div>
+                              </div>
+                              <div class="product-info">
+                                <div class="rating">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                </div>
+                                <h4 class="title"><a href="shop-single-product.html">Toys Box For Baby</a></h4>
+                                <div class="prices">
+                                  <span class="price">$190.12</span>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Product Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Product Tab Area Wrapper ==-->
+
+    <!--== Start Divider Area Wrapper ==-->
+    <section class="divider-area divider-style1-area bg-img" data-bg-img="/img/divider/bg1.png" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-lg-6 m-auto">
+            <div class="divider-content">
+              <h2 class="title">Deal Of The Day</h2>
+              <p><span>UPTO 35%  OFF </span> On All Other Baby Products</p>
+              <div class="countdown-content">
+                <ul class="countdown-timer">
+                  <li><span class="days">00</span><p class="days_text">Days</p></li>
+                  <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
+                  <li><span class="minutes">00</span><p class="minutes_text">MINUTES</p></li>
+                  <li><span class="seconds">00</span><p class="seconds_text">SECONDS</p></li>
+                </ul>
+              </div>
+              <a class="btn-theme" href="shop.html">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="shape-group">
+          <div class="shape-style3">
+            <img src="/img/divider/1.png" alt="Image">
+          </div>
+          <div class="shape-style4">
+            <img src="/img/divider/2.png" alt="Image">
+          </div>
+        </div>
+      </div>
+      <div class="shape-group">
+        <div class="shape-style1" data-bg-img="/img/divider/shape1.png"></div>
+        <div class="shape-style2" data-bg-img="/img/divider/shape2.png"></div>
+      </div>
+    </section>
+    <!--== End Divider Area Wrapper ==-->
+
+    <!--== Start Category Area Wrapper ==-->
+    <section class="category-area product-category2-area" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+        <div class="row category-items2">
+          <div class="col-md-6">
+            <div class="category-item">
+              <div class="thumb">
+                <img class="w-100" src="/img/category/4.png" alt="Image">
+                <div class="content">
+                  <div class="contact-info">
+                    <h2 class="title text-white">Collection</h2>
+                    <h4 class="price text-white">Flat <span>20%</span> Off</h4>
+                  </div>
+                  <a class="btn-theme" href="shop.html">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="category-item mt-sm-50">
+              <div class="thumb">
+                <img class="w-100" src="/img/category/5.png" alt="Image">
+                <div class="content">
+                  <div class="contact-info">
+                    <h2 class="title">Collection</h2>
+                    <h4 class="price">Flat <span>30%</span> Off</h4>
+                  </div>
+                  <a class="btn-theme" href="shop.html">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Category Area Wrapper ==-->
+
+    <!--== Start Product Tab Area Wrapper ==-->
+    <section class="product-area product-style2-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 m-auto">
+            <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
+              <h2 class="title">Trending Product</h2>
+              <div class="desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="product-tab1-slider" data-aos="fade-up" data-aos-duration="1500">
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/9.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Funskool Teddy Brown</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/10.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Newborn Kit Set</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/11.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Classic Fisher Gift</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/12.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Sassy Crib and Floor Mirror</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/9.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Funskool Teddy Brown</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/10.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Newborn Kit Set</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/11.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Classic Fisher Gift</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+              <div class="slide-item">
+                <!-- Start Product Item -->
+                <div class="product-item">
+                  <div class="product-thumb">
+                    <img src="/img/shop/12.png" alt="Image">
+                    <div class="product-action">
+                      <a class="action-quick-view" href="shop-cart.html"><i class="ion-ios-cart"></i></a>
+                      <a class="action-quick-view" href="javascript:void(0)"><i class="ion-arrow-expand"></i></a>
+                      <a class="action-quick-view" href="shop-wishlist.html"><i class="ion-heart"></i></a>
+                      <a class="action-quick-view" href="shop-compare.html"><i class="ion-shuffle"></i></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="rating">
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <h4 class="title"><a href="shop-single-product.html">Sassy Crib and Floor Mirror</a></h4>
+                    <div class="prices">
+                      <span class="price">$190.12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Product Item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Product Tab Area Wrapper ==-->
+
+    <!--== Start Blog Area Wrapper ==-->
+    <section class="blog-area blog-default-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-lg-6 m-auto">
+            <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
+              <h2 class="title">Latest Blog</h2>
+              <div class="desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-duration="1300">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <!--== Start Blog Post Item ==-->
+            <div class="post-item">
+              <div class="thumb">
+                <a href="blog-details.html"><img src="/img/blog/1.jpg" alt="Image"></a>
+              </div>
+              <div class="content">
+                <div class="meta">By, <a class="author" href="blog.html">June Cha </a><span class="dots"></span><span class="post-date">25 May, 2121</span></div>
+                <h4 class="title">
+                  <a href="blog-details.html">Baby Planet's toys makes learning so easy</a>
+                </h4>
+                <a class="btn-theme" href="blog-details.html">Read More</a>
+              </div>
+            </div>
+            <!--== End Blog Post Item ==-->
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <!--== Start Blog Post Item ==-->
+            <div class="post-item mt-xs-30">
+              <div class="thumb">
+                <a href="blog-details.html"><img src="/img/blog/2.jpg" alt="Image"></a>
+              </div>
+              <div class="content">
+                <div class="meta">By, <a class="author" href="blog.html">June Cha </a><span class="dots"></span><span class="post-date">July 24, 2022</span></div>
+                <h4 class="title">
+                  <a href="blog-details.html">Mother revolves around her children</a>
+                </h4>
+                <a class="btn-theme" href="blog-details.html">Read More</a>
+              </div>
+            </div>
+            <!--== End Blog Post Item ==-->
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <!--== Start Blog Post Item ==-->
+            <div class="post-item mt-md-30">
+              <div class="thumb">
+                <a href="blog-details.html"><img src="/img/blog/3.jpg" alt="Image"></a>
+              </div>
+              <div class="content">
+                <div class="meta">By, <a class="author" href="blog.html">June Cha </a><span class="dots"></span><span class="post-date">January 28, 2022</span></div>
+                <h4 class="title">
+                  <a href="blog-details.html">Learn while you grow toys Baby Planet</a>
+                </h4>
+                <a class="btn-theme" href="blog-details.html">Read More</a>
+              </div>
+            </div>
+            <!--== End Blog Post Item ==-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Blog Area Wrapper ==-->
+  </main>

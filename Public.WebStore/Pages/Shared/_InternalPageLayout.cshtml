@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<main class="main-content">
+<!--== Start Page Title Area ==-->
+<section class="page-title-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 m-auto">
+                <div class="page-title-content text-center">
+                    <h2 class="title">@ViewBag.Title</h2>
+                    <div class="bread-crumbs"><a href="index.html"> Home </a><span class="breadcrumb-sep"> // </span><span class="active"> Contact Us</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--== End Page Title Area ==-->
+
+@RenderBody();
+
+</main>

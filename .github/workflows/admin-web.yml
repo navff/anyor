@@ -1,0 +1,77 @@
+name: Admin.Web.Docker.Push
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks
+    # that will be executed as part of the job
+    steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE,
+        # so your job can access it
+        - uses: actions/checkout@v3
+        - name: Login to Yandex Cloud Container Registry
+          id: login-cr
+          uses: yc-actions/yc-cr-login@v1
+          with:
+            yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+            
+        - name: Build and push to YCR Admin.Web
+          env:
+            CR_REGISTRY: crp4odt1er9cmqarghdb
+            CR_REPOSITORY: containers-registry
+            IMAGE_TAG: ${{ github.sha }}
+          working-directory: Admin.Web
+          run: |
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} .
+            docker push     cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
+
+
+        - name: Build and push to YCR Public.WebStore
+          env:
+            CR_REGISTRY: crp4odt1er9cmqarghdb
+            CR_REPOSITORY: containers-registry
+            IMAGE_TAG: ${{ github.sha }}
+          working-directory: Public.WebStore
+          run: |
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }} .
+            docker push     cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }}  
+            
+        - name: Deploy Admin.Web
+          id: deploy-admin-web
+          uses: yc-actions/yc-sls-container-deploy@v1
+          with:
+            yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+            container-name: admin-web
+            folder-id: b1gslim9pjl5jan2tbod
+            revision-service-account-id: ajevd85hi4q5rgcernn2
+            revision-cores: 1
+            revision-memory: 256Mb
+            revision-core-fraction: 5
+            revision-concurrency: 8
+            revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
+            revision-execution-timeout: 10
+            revision-env: FOLDER_PATH=admin
+            
+        - name: Deploy Public.WebStore
+          id: deploy-public-webstore
+          uses: yc-actions/yc-sls-container-deploy@v1
+          with:
+            yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+            container-name: public-web-store
+            folder-id: b1gslim9pjl5jan2tbod
+            revision-service-account-id: ajevd85hi4q5rgcernn2
+            revision-cores: 1
+            revision-memory: 256Mb
+            revision-core-fraction: 5
+            revision-concurrency: 8
+            revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }}
+            revision-execution-timeout: 10
