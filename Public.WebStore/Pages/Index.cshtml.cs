@@ -15,6 +15,6 @@ public class IndexModel : PageModel
 
     public void OnGet(string? utm_source)
     {
-        Jopa = utm_source;
+        //Jopa = utm_source;
     }
 }

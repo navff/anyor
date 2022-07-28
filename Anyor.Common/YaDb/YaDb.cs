@@ -13,7 +13,10 @@ public class YaDb
         var environmentConfig = new EnvironmentConfig();
         
         var serviceAccountProvider = new ServiceAccountProvider(
-            saFilePath: environmentConfig.YaSaKeyFilePath!);
+                keyId: environmentConfig.YaKeyId,
+                serviceAccountId: environmentConfig.YaServiceAccountId,
+                privateKey: environmentConfig.YaPrivateKey
+            );
         
         serviceAccountProvider.Initialize().Wait();
         

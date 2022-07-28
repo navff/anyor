@@ -1,5 +1,4 @@
-﻿using Yandex.Cloud.Iot.Devices.V1;
-using Ydb.Sdk.Value;
+﻿using Ydb.Sdk.Value;
 
 namespace Anyor.Common;
 
@@ -28,6 +27,6 @@ public static class YdbHelpers
     
     public static Guid ToGuidOptionalField(this YdbValue value)
     {
-        return Guid.Parse(value.ToStringOptionalField());
+        return Guid.Parse(value.ToStringOptionalField()!);
     }
 }
