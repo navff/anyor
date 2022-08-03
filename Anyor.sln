@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anyor.Tests", "Anyor.Tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anyor.Domains.User", "Anyor.Domains.User\Anyor.Domains.User.csproj", "{0CEDF27D-7BC7-4098-B435-25A93E9F71E2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domains", "domains", "{E8216507-028C-42F1-A826-806AFAF4009C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{C6F99D4C-6EED-4F3D-9507-1467265DE254}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,5 +49,10 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FFA87D6-0808-4F3A-B1F3-1ACAA3318849}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CEDF27D-7BC7-4098-B435-25A93E9F71E2} = {E8216507-028C-42F1-A826-806AFAF4009C}
+		{68F9CC6D-564B-4F98-B61B-EE13AE7041DD} = {C6F99D4C-6EED-4F3D-9507-1467265DE254}
+		{6056F8BA-9897-4821-9050-90557C4BB6D6} = {C6F99D4C-6EED-4F3D-9507-1467265DE254}
 	EndGlobalSection
 EndGlobal
