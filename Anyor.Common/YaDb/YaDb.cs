@@ -75,15 +75,7 @@ public class YaDb
             WHERE
                 id = '{id.ToString()}'
            ";
-        Console.WriteLine($"YADB: {query}");
-        using var tableClient = new TableClient(_driver, new TableClientConfig());
-        
-        var response = await tableClient.SessionExec(async session => await session.ExecuteDataQuery(
-            query: query,
-            txControl: TxControl.BeginSerializableRW().Commit()
-        ));
-        
-        response.Status.EnsureSuccess();
+        ExecuteQuery(query);
     }
 }
 
