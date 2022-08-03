@@ -1,5 +1,5 @@
-using Anyor.Domains.User.Models;
-using Anyor.Domains.User.Repos;
+using Anyor.Domains.Users.Models;
+using Anyor.Domains.Users.Repos;
 
 namespace Anyor.Tests;
 

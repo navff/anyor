@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anyor.Common", "Anyor.Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anyor.Tests", "Anyor.Tests\Anyor.Tests.csproj", "{BDE238BB-DDA3-4171-9A04-F9E323194B5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anyor.Domains.User", "Anyor.Domains.User\Anyor.Domains.User.csproj", "{0CEDF27D-7BC7-4098-B435-25A93E9F71E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anyor.Domains.Users", "Anyor.Domains.Users\Anyor.Domains.Users.csproj", "{0CEDF27D-7BC7-4098-B435-25A93E9F71E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domains", "domains", "{E8216507-028C-42F1-A826-806AFAF4009C}"
 EndProject

@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Anyor.Domains.User\Anyor.Domains.User.csproj" />
+      <ProjectReference Include="..\Anyor.Domains.Users\Anyor.Domains.Users.csproj" />
     </ItemGroup>
 
     <ItemGroup>
