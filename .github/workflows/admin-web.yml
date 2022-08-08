@@ -23,35 +23,15 @@ jobs:
           uses: yc-actions/yc-cr-login@v1
           with:
             yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
-           
-        - name: Build and push to YCR Anyor.Common
-          env:
-            CR_REGISTRY: crp4odt1er9cmqarghdb
-            CR_REPOSITORY: containers-registry
-            IMAGE_TAG: ${{ github.sha }}
-          working-directory: Anyor.Common
-          run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/anyor-common:${{ github.sha }} .
-            docker push     cr.yandex/crp4odt1er9cmqarghdb/anyor-common:${{ github.sha }}  Anyor.Domains.Users
-            
-        - name: Build and push to YCR Anyor.Domains.Users
-          env:
-            CR_REGISTRY: crp4odt1er9cmqarghdb
-            CR_REPOSITORY: containers-registry
-            IMAGE_TAG: ${{ github.sha }}
-          working-directory: Anyor.Domains.Users
-          run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/anyor-domains-users:${{ github.sha }} .
-            docker push     cr.yandex/crp4odt1er9cmqarghdb/anyor-domains-users:${{ github.sha }} 
-            
+               
         - name: Build and push to YCR Admin.Web
           env:
             CR_REGISTRY: crp4odt1er9cmqarghdb
             CR_REPOSITORY: containers-registry
             IMAGE_TAG: ${{ github.sha }}
-          working-directory: Admin.Web
+          working-directory: /
           run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} .
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} ./Admin.Web
             docker push     cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
 
 
