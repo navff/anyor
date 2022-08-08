@@ -1,4 +1,5 @@
-﻿using Ydb.Sdk;
+﻿using System.Diagnostics;
+using Ydb.Sdk;
 using Ydb.Sdk.Table;
 using Ydb.Sdk.Value;
 using Ydb.Sdk.Yc;
@@ -10,6 +11,8 @@ public class YaDb
     private Driver _driver;
     public YaDb()
     {
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
         var environmentConfig = new EnvironmentConfig();
         
         var serviceAccountProvider = new ServiceAccountProvider(
@@ -33,6 +36,8 @@ public class YaDb
             loggerFactory: null
         );
         _driver.Initialize().Wait();
+        sw.Stop();
+        Console.WriteLine($"DB CONNECT INIT TIME: {sw.ElapsedMilliseconds}");
     }
 
     public async Task<List<T>> GetData<T>(
@@ -75,7 +80,7 @@ public class YaDb
             WHERE
                 id = '{id.ToString()}'
            ";
-        ExecuteQuery(query);
+        await ExecuteQuery(query);
     }
 }
 

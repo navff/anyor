@@ -34,7 +34,7 @@ public class EnvironmentConfig
         
         YaServiceAccountId = Environment.GetEnvironmentVariable("YA_SERVICE_ACCOUNT_ID")!;
         
-        YaPrivateKey = Base64Decode(Environment.GetEnvironmentVariable("YA_PRIVATE_KEY")!);
+        YaPrivateKey = Base64Decode(Environment.GetEnvironmentVariable("YA_PRIVATE_KEY", EnvironmentVariableTarget.Machine)!);
         
         if (string.IsNullOrEmpty(YaSaKeyFilePath) &&
             (string.IsNullOrEmpty(YaKeyId) || string.IsNullOrEmpty(YaServiceAccountId) || string.IsNullOrEmpty(YaPrivateKey)))

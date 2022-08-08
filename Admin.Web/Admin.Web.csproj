@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GravatarSharp.Core" Version="0.9.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.5" />
@@ -19,6 +20,11 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\plugins\nicescroll\css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anyor.Common\Anyor.Common.csproj" />
+    <ProjectReference Include="..\Anyor.Domains.Users\Anyor.Domains.Users.csproj" />
   </ItemGroup>
 
 </Project>

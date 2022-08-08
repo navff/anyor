@@ -1,0 +1,16 @@
+﻿@page "{id}"
+@model Admin.Web.Pages.Users.UsersDeleteModel
+
+@{
+    ViewBag.Title = "Пользователь удалён";
+}
+
+<main class="page-content" id="main">
+    <h3>Пользователь удалён</h3>
+</main>
+
+<script>
+    setTimeout(() => {
+        window.location = '/users';
+    }, 1000);
+</script>

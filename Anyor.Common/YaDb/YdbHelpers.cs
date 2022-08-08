@@ -20,6 +20,11 @@ public static class YdbHelpers
             : System.Text.Encoding.Default.GetString(bytes);
     }
     
+    public static string? ToUtf8OptionalField(this YdbValue value)
+    {
+        return value.GetOptionalUtf8();
+    }
+    
     public static Guid ToGuidField(this YdbValue value)
     {
         return Guid.Parse(value.ToStringField());

@@ -112,3 +112,23 @@ $(function() {
 		$("html").addClass("color-header headercolor8"), $("html").removeClass("headercolor1 headercolor2 headercolor4 headercolor5 headercolor6 headercolor7 headercolor3")
 	})
 });
+
+function openWindowWithPost(url, token, data) {
+	var form = document.createElement("form");
+	form.target = "_self";
+	form.method = "POST";
+	form.action = url;
+	form.style.display = "none";
+
+	for (var key in data) {
+		var input = document.createElement("input");
+		input.type = "hidden";
+		input.name = key;
+		input.value = data[key];
+		form.appendChild(input);
+	}
+	
+	document.body.appendChild(form);
+	form.submit();
+	document.body.removeChild(form);
+}
