@@ -1,22 +1,13 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY . Admin.Web/
+COPY . ./
+WORKDIR /app/Admin.Web
+RUN dotnet publish "Admin.Web.csproj" -c Release -o out
+
+FROM build-env
 ENV PORT 8080
 ENV FOLDER_PATH admin
-RUN dotnet restore "Admin.Web/Admin.Web.csproj"
-COPY . .
-WORKDIR "/src/Admin.Web"
-RUN dotnet build "Admin.Web.csproj" -c Release -o /app/build
-
-FROM build AS publish
-ENV PORT 8080
-ENV FOLDER_PATH admin
-RUN dotnet publish "Admin.Web.csproj" -c Release -o /app/publish
-
-FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/publish .
 ENTRYPOINT ["dotnet", "Admin.Web.dll"]
