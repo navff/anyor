@@ -31,7 +31,7 @@ jobs:
             IMAGE_TAG: ${{ github.sha }}
           working-directory: /
           run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} ./Admin.Web
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} .
             docker push     cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
 
 
