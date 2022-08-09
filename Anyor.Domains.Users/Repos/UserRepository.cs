@@ -19,19 +19,18 @@ public class UserRepository
         ORDER BY `email`
         LIMIT 300;
     ";
-        await _yaDb.Init();
         var result = await _yaDb.GetData(query, row => 
             new User.Models.User
             {
-                Email = row["email"].ToStringField(),
-                Token = row["token"].ToStringField(),
-                Phone = row["phone"].ToStringOptionalField(),
-                Telegram = row["telegram"].ToStringOptionalField(),
-                Username = row["username"].ToStringField(),
-                VkId = row["vk_id"].ToStringOptionalField(),
-                FirstName = row["first_name"].ToUtf8OptionalField(),
-                LastName = row["last_name"].ToUtf8OptionalField(),
-                Id = row["id"].ToGuidField()
+                Email = row["email"].ToStringField("email"),
+                Token = row["token"].ToStringField("token"),
+                Phone = row["phone"].ToStringOptionalField("phone"),
+                Telegram = row["telegram"].ToStringOptionalField("telegram"),
+                Username = row["username"].ToStringField("username"),
+                VkId = row["vk_id"].ToStringOptionalField("vk_id"),
+                FirstName = row["first_name"].ToUtf8OptionalField("first_name"),
+                LastName = row["last_name"].ToUtf8OptionalField("last_name"),
+                Id = row["id"].ToGuidField("id")
             });
         return result;
     }

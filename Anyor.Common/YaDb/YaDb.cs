@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Ydb.Sdk;
 using Ydb.Sdk.Table;
 using Ydb.Sdk.Value;
@@ -12,7 +11,7 @@ public class YaDb
     private Driver _driver;
     public YaDb()
     {
-        
+        Init().Wait();
     }
 
     public async Task Init()

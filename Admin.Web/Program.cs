@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var port = Environment.GetEnvironmentVariable("PORT");
 port = port ?? "8080";
-builder.WebHost.UseUrls($"http://localhost:{port}");
+builder.WebHost.UseUrls($"http://*:{port}");
 
 builder.Services.AddRazorPages().AddRazorPagesOptions(o =>
 {
