@@ -19,6 +19,7 @@ public class UserRepository
         ORDER BY `email`
         LIMIT 300;
     ";
+        await _yaDb.Init();
         var result = await _yaDb.GetData(query, row => 
             new User.Models.User
             {

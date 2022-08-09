@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel;
+using System.Diagnostics;
 using Ydb.Sdk;
 using Ydb.Sdk.Table;
 using Ydb.Sdk.Value;
@@ -11,24 +12,30 @@ public class YaDb
     private Driver _driver;
     public YaDb()
     {
+        
+    }
+
+    public async Task Init()
+    {
         Stopwatch sw = new Stopwatch();
         sw.Start();
         var environmentConfig = new EnvironmentConfig();
-        
         var serviceAccountProvider = new ServiceAccountProvider(
-                keyId: environmentConfig.YaKeyId,
-                serviceAccountId: environmentConfig.YaServiceAccountId,
-                privateKey: environmentConfig.YaPrivateKey
-            );
+            keyId: environmentConfig.YaKeyId,
+            serviceAccountId: environmentConfig.YaServiceAccountId,
+            privateKey: environmentConfig.YaPrivateKey
+        );
         Console.WriteLine("START WAITING YDB");
-        serviceAccountProvider.Initialize().Wait();
+        await serviceAccountProvider.Initialize();
         Console.WriteLine("END WAITING YDB");
         
         
         var config = new DriverConfig(
             endpoint: environmentConfig.YdbEndpoint,
             database: environmentConfig.YdbDbAddress,
-            credentials:  serviceAccountProvider
+            credentials:  serviceAccountProvider,
+            defaultTransportTimeout: TimeSpan.FromSeconds(30),
+            defaultStreamingTransportTimeout: TimeSpan.FromSeconds(30)
         );
         
         _driver = new Driver(

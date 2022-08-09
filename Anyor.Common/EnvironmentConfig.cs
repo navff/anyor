@@ -43,12 +43,13 @@ public class EnvironmentConfig
         {
             encodedYaPrivateKey = Environment.GetEnvironmentVariable("YA_PRIVATE_KEY");
         }
-        Console.WriteLine("YA_PRIVATE_KEY: "+encodedYaPrivateKey);
+        
         if (string.IsNullOrEmpty(encodedYaPrivateKey))
         {
             throw new InvalidOperationException("YA_PRIVATE_KEY must be set");
         }
         YaPrivateKey = Base64Decode(encodedYaPrivateKey!);
+        Console.WriteLine("YA_PRIVATE_KEY: "+YaPrivateKey);
         
         if (string.IsNullOrEmpty(YaSaKeyFilePath) &&
             (string.IsNullOrEmpty(YaKeyId) || string.IsNullOrEmpty(YaServiceAccountId) || string.IsNullOrEmpty(YaPrivateKey)))
