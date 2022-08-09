@@ -1,4 +1,4 @@
-name: Admin.Web.Docker.Push
+name: BuildAll.OnPush.ToMaster
 
 on:
   push:
