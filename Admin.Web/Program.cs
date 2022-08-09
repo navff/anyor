@@ -1,9 +1,5 @@
 using Admin.Web;
-using Admin.Web.Data;
-using Anyor.Common;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +7,6 @@ var port = Environment.GetEnvironmentVariable("PORT");
 port = port ?? "8080";
 builder.WebHost.UseUrls($"http://localhost:{port}");
 
-// Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages().AddRazorPagesOptions(o =>
 {
     o.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());

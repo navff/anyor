@@ -1,5 +1,4 @@
 ﻿using Anyor.Common;
-using Anyor.Domains.User.Models;
 using Anyor.Domains.Users.Repos;
 
 namespace Admin.Web;
