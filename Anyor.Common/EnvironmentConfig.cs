@@ -33,8 +33,15 @@ public class EnvironmentConfig
         YaKeyId = Environment.GetEnvironmentVariable("YA_KEY_ID")!;
         
         YaServiceAccountId = Environment.GetEnvironmentVariable("YA_SERVICE_ACCOUNT_ID")!;
-        
-        YaPrivateKey = Base64Decode(Environment.GetEnvironmentVariable("YA_PRIVATE_KEY", EnvironmentVariableTarget.Machine)!);
+
+        var encodedYaPrivateKey =
+            Environment.GetEnvironmentVariable("YA_PRIVATE_KEY", EnvironmentVariableTarget.Machine);
+        if (string.IsNullOrEmpty(encodedYaPrivateKey))
+        {
+            throw new InvalidOperationException("YA_SA_KEYFILE_PATH must be set. Or YA_KEY_ID + YA_SERVICE_ACCOUNT_ID + YA_PRIVATE_KEY");
+        }
+        Console.WriteLine("YA_PRIVATE_KEY: "+encodedYaPrivateKey);
+        YaPrivateKey = Base64Decode(encodedYaPrivateKey!);
         
         if (string.IsNullOrEmpty(YaSaKeyFilePath) &&
             (string.IsNullOrEmpty(YaKeyId) || string.IsNullOrEmpty(YaServiceAccountId) || string.IsNullOrEmpty(YaPrivateKey)))
@@ -49,7 +56,6 @@ public class EnvironmentConfig
         {
             base64EncodedData += "=";
         }
-        Console.WriteLine("KEY: "+base64EncodedData);
         var base64EncodedBytes = Convert.FromBase64String(base64EncodedData);
         return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
     }
