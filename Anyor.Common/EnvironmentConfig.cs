@@ -39,6 +39,10 @@ public class EnvironmentConfig
         
         var encodedYaPrivateKey =
             Environment.GetEnvironmentVariable("YA_PRIVATE_KEY", EnvironmentVariableTarget.Machine);
+        if (string.IsNullOrEmpty(encodedYaPrivateKey))
+        {
+            encodedYaPrivateKey = Environment.GetEnvironmentVariable("YA_PRIVATE_KEY");
+        }
         Console.WriteLine("YA_PRIVATE_KEY: "+encodedYaPrivateKey);
         if (string.IsNullOrEmpty(encodedYaPrivateKey))
         {
