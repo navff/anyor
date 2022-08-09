@@ -20,9 +20,9 @@ public class YaDb
                 serviceAccountId: environmentConfig.YaServiceAccountId,
                 privateKey: environmentConfig.YaPrivateKey
             );
-        
+        Console.WriteLine("START WAITING YDB");
         serviceAccountProvider.Initialize().Wait();
-        
+        Console.WriteLine("END WAITING YDB");
         
         
         var config = new DriverConfig(
