@@ -1,14 +1,11 @@
 ﻿@page
 @using Anyor.Domains.User.Models
-@using System.Security.Cryptography
-@using GravatarSharp.Core
+@using Anyor.Common.Utils
 @model Admin.Web.Pages.Users.UsersIndexModel
 
 @{
     ViewBag.Title = "Люди";
     var users = ViewData["Users"]!=null ? (List<User>)ViewData["Users"] : new List<User>();
-    var gravatar = new GravatarController(new HttpClient());
-    MD5 md5 = MD5.Create();
 }
 
  <!--start content-->
