@@ -59,7 +59,14 @@ jobs:
             revision-concurrency: 8
             revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
             revision-execution-timeout: 10
-            revision-env: FOLDER_PATH=admin
+            revision-env: 
+              FOLDER_PATH=admin
+              ASPNETCORE_ENVIRONMENT=Development
+              YDB_ENDPOINT=grpcs://ydb.serverless.yandexcloud.net:2135
+              YDB_ADDRESS=/ru-central1/b1goihrd513av2bvpmcl/etnmp8dq6bn632cts40m
+              YA_PRIVATE_KEY=${{ secrets.YA_PRIVATE_KEY }}
+              YA_KEY_ID=ajebcgotf8ip9i1n1582
+              YA_SERVICE_ACCOUNT_ID=ajevd85hi4q5rgcernn2
             
         - name: Deploy Public.WebStore
           id: deploy-public-webstore
