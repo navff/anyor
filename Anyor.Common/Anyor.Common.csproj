@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="AspNetCore.Yandex.ObjectStorage" Version="0.2.2" />
       <PackageReference Include="Navff.Ydb.Sdk.Yc.Auth" Version="1.0.0" />
       <PackageReference Include="Ydb.Sdk" Version="0.0.5" />
     </ItemGroup>

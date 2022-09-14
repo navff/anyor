@@ -1,4 +1,7 @@
-﻿namespace Anyor.Common;
+﻿using AspNetCore.Yandex.ObjectStorage;
+using AspNetCore.Yandex.ObjectStorage.Configuration;
+
+namespace Anyor.Common;
 
 public class EnvironmentConfig
 {
@@ -16,48 +19,40 @@ public class EnvironmentConfig
 
     public EnvironmentConfig()
     {
-        YdbEndpoint = Environment.GetEnvironmentVariable("YDB_ENDPOINT")!;
-        if (string.IsNullOrEmpty(YdbEndpoint))
+        var yaSecretKey = Environment.GetEnvironmentVariable("YA_OBJECT_STORAGE_SECRET_KEY")!;
+        if (string.IsNullOrEmpty(yaSecretKey))
         {
-            throw new InvalidOperationException("There is no environment variable YDB_ENDPOINT");
+            throw new InvalidOperationException("There is no environment variable YA_OBJECT_STORAGE_SECRET_KEY");
+        };
+        
+        var oss = new YandexStorageService(new YandexStorageOptions()
+        {
+            AccessKey = "YCAJEWT3HNKiSCnrfiXOf_Bsm",
+            SecretKey = yaSecretKey,
+            BucketName = "secrets"
+        });
+        var result = oss.ObjectService.GetAsync("anyor.json").Result;
+        
+        var stream = result.ReadAsStreamAsync().Result.Value;
+        var reader = new StreamReader(stream);
+        var text = reader.ReadToEnd();
+        
+        var config = Newtonsoft.Json.JsonConvert.DeserializeObject<EnvironmentConfigJson>(text);
+        if (config != null)
+        {
+            this.YdbEndpoint = config.YdbEndpoint;
+            this.YaKeyId = config.YaKeyId;
+            this.YaPrivateKey = Base64Decode(config.YaPrivateKey!);
+            this.YdbDbAddress = config.YdbDbAddress;
+            this.YaServiceAccountId = config.YaServiceAccountId;
+            this.YaSaKeyFilePath = config.YaSaKeyFilePath;
         }
-
-        YdbDbAddress = Environment.GetEnvironmentVariable("YDB_ADDRESS")!;
-        if (string.IsNullOrEmpty(YdbDbAddress))
+        else
         {
-            throw new InvalidOperationException("There is no environment variable YDB_ADDRESS");
-        }
-        
-        YaSaKeyFilePath = Environment.GetEnvironmentVariable("YA_SA_KEYFILE_PATH")!;
-        Console.WriteLine("YA_SA_KEYFILE_PATH: " + YaSaKeyFilePath);
-        
-        YaKeyId = Environment.GetEnvironmentVariable("YA_KEY_ID")!;
-        Console.WriteLine("YA_KEY_ID: " + YaKeyId);
-        
-        YaServiceAccountId = Environment.GetEnvironmentVariable("YA_SERVICE_ACCOUNT_ID")!;
-        Console.WriteLine("YA_SERVICE_ACCOUNT_ID: " + YaServiceAccountId);
-        
-        var encodedYaPrivateKey =
-            Environment.GetEnvironmentVariable("YA_PRIVATE_KEY", EnvironmentVariableTarget.Machine);
-        if (string.IsNullOrEmpty(encodedYaPrivateKey))
-        {
-            encodedYaPrivateKey = Environment.GetEnvironmentVariable("YA_PRIVATE_KEY");
-        }
-        
-        if (string.IsNullOrEmpty(encodedYaPrivateKey))
-        {
-            throw new InvalidOperationException("YA_PRIVATE_KEY must be set");
-        }
-        YaPrivateKey = Base64Decode(encodedYaPrivateKey!);
-        Console.WriteLine("YA_PRIVATE_KEY: "+YaPrivateKey);
-        
-        if (string.IsNullOrEmpty(YaSaKeyFilePath) &&
-            (string.IsNullOrEmpty(YaKeyId) || string.IsNullOrEmpty(YaServiceAccountId) || string.IsNullOrEmpty(YaPrivateKey)))
-        {
-            throw new InvalidOperationException("YA_SA_KEYFILE_PATH must be set. Or YA_KEY_ID + YA_SERVICE_ACCOUNT_ID + YA_PRIVATE_KEY");
+            throw new InvalidOperationException("Cannot read config file from Yandex Object Storage");
         }
     }
-    
+
     private static string Base64Decode(string base64EncodedData) {
         // если ключ обрезал знак `=` скриптом деплоя
         if (!base64EncodedData.EndsWith("="))
@@ -67,4 +62,19 @@ public class EnvironmentConfig
         var base64EncodedBytes = Convert.FromBase64String(base64EncodedData);
         return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
     }
+}
+
+public class EnvironmentConfigJson
+{
+    public string YdbEndpoint { get; set; }
+    
+    public string YdbDbAddress { get; set; }
+    
+    public string YaSaKeyFilePath { get; set; }
+    
+    public string YaKeyId { get; set; }
+    
+    public string YaServiceAccountId { get; set; }
+    
+    public string YaPrivateKey { get; set; }
 }

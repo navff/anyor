@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas" />
     <Folder Include="wwwroot\plugins\nicescroll\css\" />
   </ItemGroup>
 

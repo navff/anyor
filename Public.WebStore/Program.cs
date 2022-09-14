@@ -44,6 +44,7 @@ if (!string.IsNullOrEmpty(folderPath))
     app.UsePathBase($"/{folderPath}");
 }
 
+app.UseStaticFiles();
 
 app.UseRouting();
 
