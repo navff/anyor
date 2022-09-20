@@ -33,9 +33,18 @@ public class UserTests
             Username = Guid.NewGuid().ToString(),
             FirstName = Guid.NewGuid().ToString(),
             LastName = Guid.NewGuid().ToString(),
+            SiteAmoId = Guid.NewGuid().ToString(),
             VkId = "123456678"
         };
         var id = await _userRepository.AddUser(user);
         await _userRepository.RemoveUser(id);
+    }
+    
+    [Test]
+    public async Task GetUser()
+    {
+        var users = await _userRepository.GetUsers();
+        var user = await _userRepository.GetUser(id: users.First().Id.ToString());
+        Assert.IsNotNull(user);
     }
 }
