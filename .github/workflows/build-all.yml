@@ -41,8 +41,8 @@ jobs:
             IMAGE_TAG: ${{ github.sha }}
           working-directory: Api
           run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/api:${{ github.sha }} .
-            docker push     cr.yandex/crp4odt1er9cmqarghdb/api:${{ github.sha }}
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }} .
+            docker push     cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }}  
 
 
         - name: Build and push to YCR Public.WebStore
