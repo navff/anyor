@@ -72,20 +72,20 @@ jobs:
             revision-env: YA_OBJECT_STORAGE_SECRET_KEY=${{ secrets.YA_OBJECT_STORAGE_SECRET_KEY }}
         
         - name: Deploy Api
-            id: deploy-admin-web
-            uses: yc-actions/yc-sls-container-deploy@v1
-            with:
-              yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
-              container-name: api
-              folder-id: b1gslim9pjl5jan2tbod
-              revision-service-account-id: ajevd85hi4q5rgcernn2
-              revision-cores: 1
-              revision-memory: 256Mb
-              revision-core-fraction: 5
-              revision-concurrency: 8
-              revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
-              revision-execution-timeout: 60
-              revision-env: YA_OBJECT_STORAGE_SECRET_KEY=${{ secrets.YA_OBJECT_STORAGE_SECRET_KEY }}
+          id: deploy-api
+          uses: yc-actions/yc-sls-container-deploy@v1
+          with:
+            yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+            container-name: api
+            folder-id: b1gslim9pjl5jan2tbod
+            revision-service-account-id: ajevd85hi4q5rgcernn2
+            revision-cores: 1
+            revision-memory: 256Mb
+            revision-core-fraction: 5
+            revision-concurrency: 8
+            revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
+            revision-execution-timeout: 60
+            revision-env: YA_OBJECT_STORAGE_SECRET_KEY=${{ secrets.YA_OBJECT_STORAGE_SECRET_KEY }}
         
         - name: Deploy Public.WebStore
           id: deploy-public-webstore
