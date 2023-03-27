@@ -39,9 +39,9 @@ jobs:
             CR_REGISTRY: crp4odt1er9cmqarghdb
             CR_REPOSITORY: containers-registry
             IMAGE_TAG: ${{ github.sha }}
-          working-directory: .
+          working-directory: Api
           run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/api:${{ github.sha }} -f ./Api/Dockerfile .
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/api:${{ github.sha }} .
             docker push     cr.yandex/crp4odt1er9cmqarghdb/api:${{ github.sha }}
 
 
