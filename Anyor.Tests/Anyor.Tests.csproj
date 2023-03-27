@@ -18,6 +18,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Anyor.Domains.Users\Anyor.Domains.Users.csproj" />
+      <ProjectReference Include="..\Api\Api.csproj" />
     </ItemGroup>
 
     <ItemGroup>
