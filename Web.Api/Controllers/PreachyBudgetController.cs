@@ -23,7 +23,7 @@ public class PreachyBudgetController: ControllerBase
         _amoService = new AmoService(_envConfig.AmoTokenConfig.AccessToken);
     }
     
-    [HttpPost]
+    [HttpPost("AmoHookHandle")]
     public async Task<IActionResult> AmoHookHandle(AmoLeadStatusHook? hook = null)
     {
         foreach (var key in Request.Query.Keys)
