@@ -24,15 +24,15 @@ jobs:
           with:
             yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
                
-#        - name: Build and push to YCR Admin.Web
-#          env:
-#            CR_REGISTRY: crp4odt1er9cmqarghdb
-#            CR_REPOSITORY: containers-registry
-#            IMAGE_TAG: ${{ github.sha }}
-#          working-directory: .
-#          run: |
-#            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} -f ./Admin.Web/Dockerfile .
-#            docker push     cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
+        - name: Build and push to YCR Admin.Web
+          env:
+            CR_REGISTRY: crp4odt1er9cmqarghdb
+            CR_REPOSITORY: containers-registry
+            IMAGE_TAG: ${{ github.sha }}
+          working-directory: .
+          run: |
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} -f ./Admin.Web/Dockerfile .
+            docker push     cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
             
         - name: Build and push to YCR Web.Api
           env:
@@ -71,8 +71,8 @@ jobs:
             revision-execution-timeout: 60
             revision-env: YA_OBJECT_STORAGE_SECRET_KEY=${{ secrets.YA_OBJECT_STORAGE_SECRET_KEY }}
         
-        - name: Deploy Api
-          id: deploy-api
+        - name: Deploy Web.Api
+          id: deploy-webapi
           uses: yc-actions/yc-sls-container-deploy@v1
           with:
             yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
@@ -83,7 +83,8 @@ jobs:
             revision-memory: 256Mb
             revision-core-fraction: 5
             revision-concurrency: 8
-            revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
+            revision-provisioned: 1
+            revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/webapi:${{ github.sha }}
             revision-execution-timeout: 60
             revision-env: YA_OBJECT_STORAGE_SECRET_KEY=${{ secrets.YA_OBJECT_STORAGE_SECRET_KEY }}
         

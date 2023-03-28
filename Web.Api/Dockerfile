@@ -6,13 +6,13 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet restore "Api/Api.csproj"
+RUN dotnet restore "Web.Api/Web.Api.csproj"
 COPY . .
 WORKDIR "/src/Api"
-RUN dotnet build "Api.csproj" -c Debug -o /app/build
+RUN dotnet build "Web.Api.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Api.csproj" -c Debug -o /app/publish
+RUN dotnet publish "Web.Api.csproj" -c Debug -o /app/publish
 
 FROM base AS final
 WORKDIR /app
@@ -21,4 +21,4 @@ ENV PORT 9999
 ENV FOLDER_PATH admin
 ENV ASPNETCORE_ENVIRONMENT Development
 ENV FOLDER_PATH admin
-ENTRYPOINT ["dotnet", "Api.dll"]
+ENTRYPOINT ["dotnet", "Web.Api.dll"]
