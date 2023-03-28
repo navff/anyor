@@ -80,7 +80,7 @@ jobs:
             folder-id: b1gslim9pjl5jan2tbod
             revision-service-account-id: ajevd85hi4q5rgcernn2
             revision-cores: 1
-            revision-memory: 256Mb
+            revision-memory: 128Mb
             revision-core-fraction: 5
             revision-concurrency: 8
             revision-provisioned: 1
