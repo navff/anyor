@@ -24,8 +24,12 @@ public class PreachyBudgetController: ControllerBase
     }
     
     [HttpPost("AmoHookHandle")]
-    public async Task<IActionResult> AmoHookHandle([FromBody]string request)
+    public async Task<IActionResult> AmoHookHandle()
     {
+        if (!Request.Body.CanRead) return BadRequest();
+        
+        var streamReader = new StreamReader(Request.Body);
+        var request = await streamReader.ReadToEndAsync();
         var hook = ParseHook(request);
 
         Console.WriteLine("LEAD_ID: " + hook.LeadId);
