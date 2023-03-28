@@ -1,12 +1,9 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using System.Web;
+﻿using System.Web;
 using AmoToSheetFunc;
 using AmoToSheetFunc.Dtos;
-using AmoToSheetFunction;
 using Api.Common;
 using Api.Services;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace Api.Controllers;
 
@@ -30,6 +27,12 @@ public class PreachyBudgetController: ControllerBase
         
         var streamReader = new StreamReader(Request.Body);
         var request = await streamReader.ReadToEndAsync();
+
+        return await AmoHookHandle(request);
+    }
+    
+    public async Task<IActionResult> AmoHookHandle(string request)
+    {
         var hook = ParseHook(request);
 
         Console.WriteLine("LEAD_ID: " + hook.LeadId);
