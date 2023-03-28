@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Reflection.Metadata.Ecma335;
+using System.Web;
 using AmoToSheetFunc;
 using AmoToSheetFunc.Dtos;
 using AmoToSheetFunction;
@@ -68,7 +69,39 @@ public class PreachyBudgetController: ControllerBase
 
         return Ok();
     }
+
+    [HttpPut("AmoHookHandle")]
+    public async Task<IActionResult> AmoHookHandlePut(AmoLeadStatusHook? hook = null)
+    {
+        foreach (var key in Request.Query.Keys)
+        {
+            Console.WriteLine("KEY: " + key);
+            Console.WriteLine("VALUE: " + Request.Query[key]);
+        }
+
+        StreamReader reader = new StreamReader(Request.Body);
+        string body = await reader.ReadToEndAsync();
+        Console.WriteLine("BODY: " + body);
+
+        return Ok();
+    }
     
+    [HttpGet("AmoHookHandle")]
+    public async Task<IActionResult> AmoHookHandleGet(AmoLeadStatusHook? hook = null)
+    {
+        foreach (var key in Request.Query.Keys)
+        {
+            Console.WriteLine("KEY: " + key);
+            Console.WriteLine("VALUE: " + Request.Query[key]);
+        }
+
+        StreamReader reader = new StreamReader(Request.Body);
+        string body = await reader.ReadToEndAsync();
+        Console.WriteLine("BODY: " + body);
+
+        return Ok();
+    }
+
     private AmoLeadStatusHook ParseHook(string valueToConvert)
     {
             
