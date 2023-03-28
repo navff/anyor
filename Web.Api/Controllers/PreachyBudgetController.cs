@@ -24,7 +24,7 @@ public class PreachyBudgetController: ControllerBase
     }
     
     [HttpPost("AmoHookHandle")]
-    public async Task<IActionResult> AmoHookHandle(AmoLeadStatusHook? hook = null)
+    public async Task<IActionResult> AmoHookHandle()
     {
         foreach (var key in Request.Query.Keys)
         {
@@ -42,7 +42,7 @@ public class PreachyBudgetController: ControllerBase
             
         var amoRequest = JsonConvert.DeserializeObject<AmoHookRequest>(request);
         if (amoRequest == null) return BadRequest("Cannot deserialize webhook");
-*/
+
         //var hook = ParseHook(base64request);
 
         Console.WriteLine("LEAD_ID: " + hook.LeadId);
@@ -66,7 +66,7 @@ public class PreachyBudgetController: ControllerBase
                 ContactName = contact.Name
             });  
         });
-
+*/
         return Ok();
     }
 
@@ -87,7 +87,7 @@ public class PreachyBudgetController: ControllerBase
     }
     
     [HttpGet("AmoHookHandle")]
-    public async Task<IActionResult> AmoHookHandleGet(AmoLeadStatusHook? hook = null)
+    public async Task<IActionResult> AmoHookHandleGet()
     {
         foreach (var key in Request.Query.Keys)
         {
