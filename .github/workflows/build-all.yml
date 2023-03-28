@@ -34,15 +34,15 @@ jobs:
 #            docker build -t cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }} -f ./Admin.Web/Dockerfile .
 #            docker push     cr.yandex/crp4odt1er9cmqarghdb/adminweb:${{ github.sha }}
             
-        - name: Build and push to YCR Api
+        - name: Build and push to YCR Web.Api
           env:
             CR_REGISTRY: crp4odt1er9cmqarghdb
             CR_REPOSITORY: containers-registry
             IMAGE_TAG: ${{ github.sha }}
           working-directory: .
           run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/api:${{ github.sha }} -f ./Api/Dockerfileeeee .
-            docker push     cr.yandex/crp4odt1er9cmqarghdb/api:${{ github.sha }}
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/webapi:${{ github.sha }} -f ./Web.Api/Dockerfile .
+            docker push     cr.yandex/crp4odt1er9cmqarghdb/webapi:${{ github.sha }}
 
 
         - name: Build and push to YCR Public.WebStore
