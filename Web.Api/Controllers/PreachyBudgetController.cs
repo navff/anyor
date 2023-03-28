@@ -23,16 +23,27 @@ public class PreachyBudgetController: ControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> AmoHookHandle([FromBody]string? request = null)
+    public async Task<IActionResult> AmoHookHandle(AmoLeadStatusHook? hook = null)
     {
-        if (request == null) return BadRequest();
+        foreach (var key in Request.Query.Keys)
+        {
+            Console.WriteLine("KEY: " + key);
+            Console.WriteLine("VALUE: " + Request.Query[key]);
+        }
+        
+        StreamReader reader = new StreamReader(Request.Body);
+        string body = await reader.ReadToEndAsync();
+        Console.WriteLine("BODY: " + body);
+       
+        /* if (request == null) return BadRequest();
             
-        Console.WriteLine("REQUEST: " + request);
+        
             
         var amoRequest = JsonConvert.DeserializeObject<AmoHookRequest>(request);
         if (amoRequest == null) return BadRequest("Cannot deserialize webhook");
+*/
+        //var hook = ParseHook(base64request);
 
-        var hook = ParseHook(amoRequest.body);
         Console.WriteLine("LEAD_ID: " + hook.LeadId);
 
         Task.Run(() =>
