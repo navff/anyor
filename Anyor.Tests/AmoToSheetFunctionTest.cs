@@ -26,7 +26,7 @@ public class AmoToSheetFunctionTest
         var controller = new PreachyBudgetController();
         var s =
             "leads%5Bstatus%5D%5B0%5D%5Bid%5D=10754147&leads%5Bstatus%5D%5B0%5D%5Bstatus_id%5D=54423922&leads%5Bstatus%5D%5B0%5D%5Bpipeline_id%5D=6344290&leads%5Bstatus%5D%5B0%5D%5Bold_status_id%5D=54435014&leads%5Bstatus%5D%5B0%5D%5Bold_pipeline_id%5D=6344290&account%5Bid%5D=30307558&account%5Bsubdomain%5D=anyor";
-        var response = controller.AmoHookHandle(s).Result;
+        var response = controller.AmoHookHandle().Result;
         if (response is YaCloudFunctionResponse)
         {
             Assert.That(((YaCloudFunctionResponse)response).StatusCode, Is.EqualTo(200));
