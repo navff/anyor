@@ -23,7 +23,7 @@ public class PreachyBudgetController: ControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> AmoHookHandle(string? request = null)
+    public async Task<IActionResult> AmoHookHandle([FromBody]string? request = null)
     {
         if (request == null) return BadRequest();
             
