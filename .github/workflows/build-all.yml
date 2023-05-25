@@ -57,7 +57,7 @@ jobs:
             
         - name: Deploy Admin.Web
           id: deploy-admin-web
-          uses: yc-actions/yc-sls-container-deploy@2
+          uses: yc-actions/yc-sls-container-deploy@v2
           with:
             yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
             container-name: admin-web
