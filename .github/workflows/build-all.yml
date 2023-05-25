@@ -102,3 +102,4 @@ jobs:
             revision-concurrency: 8
             revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }}
             revision-execution-timeout: 60
+            revision-env: YA_OBJECT_STORAGE_SECRET_KEY=${{ secrets.YA_OBJECT_STORAGE_SECRET_KEY }}
