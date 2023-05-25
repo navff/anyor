@@ -50,7 +50,7 @@ jobs:
             CR_REGISTRY: crp4odt1er9cmqarghdb
             CR_REPOSITORY: containers-registry
             IMAGE_TAG: ${{ github.sha }}
-          working-directory: Public.WebStore
+          working-directory: .
           run: |
             docker build -t cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }} .
             docker push     cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }}  
