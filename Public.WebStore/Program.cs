@@ -1,7 +1,10 @@
 ﻿using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using Anyor.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
+using ProductStorage.Abstract;
+using ProductStorage.Bitrix;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,7 @@ port = port ?? "8080";
 builder.WebHost.UseUrls($"http://localhost:{port}");
 
 var directory = Directory.GetCurrentDirectory();
+builder.Services.AddCors();
 
 // Add services to the container.
 builder.Services.AddRazorPages(options =>
@@ -22,7 +26,10 @@ builder.Services.AddRazorPages(options =>
     })
     .AddRazorRuntimeCompilation(options => options.FileProviders.Add(new PhysicalFileProvider(directory)));
 
+builder.Services.AddSingleton<EnvironmentConfig>();
 builder.Services.AddSingleton(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic }));
+builder.Services.AddSingleton(new HttpClient());
+builder.Services.AddScoped<IProductStorage, BitrixProductStorage>();
 
 var app = builder.Build();
 
@@ -47,6 +54,8 @@ if (!string.IsNullOrEmpty(folderPath))
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin());
 
 app.UseAuthorization();
 

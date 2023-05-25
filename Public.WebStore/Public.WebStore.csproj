@@ -12,4 +12,8 @@
       <PackageReference Include="MyTested.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ProductStorage\ProductStorage.csproj" />
+    </ItemGroup>
+
 </Project>

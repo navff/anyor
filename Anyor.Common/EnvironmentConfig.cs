@@ -16,6 +16,10 @@ public class EnvironmentConfig
     public string YaServiceAccountId { get; private set; }
     
     public string YaPrivateKey { get; private set; }
+    
+    public string BitrixWebhookKey { get; private set; }
+    
+    public string BitrixBaseUrl { get; private set; }
 
     public EnvironmentConfig()
     {
@@ -46,6 +50,8 @@ public class EnvironmentConfig
             this.YdbDbAddress = config.YdbDbAddress;
             this.YaServiceAccountId = config.YaServiceAccountId;
             this.YaSaKeyFilePath = config.YaSaKeyFilePath;
+            this.BitrixWebhookKey = config.BitrixWebhookKey;
+            this.BitrixBaseUrl = config.BitrixBaseUrl;
         }
         else
         {
@@ -77,4 +83,8 @@ public class EnvironmentConfigJson
     public string YaServiceAccountId { get; set; }
     
     public string YaPrivateKey { get; set; }
+    
+    public string BitrixWebhookKey { get; set; }
+    
+    public string BitrixBaseUrl { get; set; }
 }
