@@ -21,7 +21,7 @@ public class BitrixProductStorage: IProductStorage
 
     public async Task<Product> GetProduct(long id)
     {
-        var stringResponse = await _bitrixApiClient.Get(_bitrixHookUrl + "crm.product.get.json?ID=142");
+        var stringResponse = await _bitrixApiClient.Get(_bitrixHookUrl + $"crm.product.get.json?ID={id}");
         if (string.IsNullOrEmpty(stringResponse))
         {
             throw new InvalidOperationException("Error while getting Product from Bitrix");

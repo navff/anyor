@@ -1,4 +1,4 @@
-﻿@page "{category?}"
+﻿@page "{id}"
 @model Public.WebStore.Pages.Store.ProductModel
 @{
     ViewBag.Title = Model.Product.Title;
@@ -15,10 +15,13 @@
                 <div class="swiper-wrapper">
                   @foreach (var image in Model.Product.Images)
                   {
-                    <div class="swiper-slide zoom zoom-hover">
+                    <div class="swiper-slide zoom_ zoom-hover_">
                       <div class="thumb-item">
-                        <a class="lightbox-image" data-fancybox="gallery" href="https://anyor.bitrix24.shop/upload/resize_cache/iblock/253/3ufb4t0ksqj67xu6diiylvm3o2cx09d1/800_800_1/lemon-cake-1.jpeg">
-                          <img src="https://anyor.bitrix24.shop/upload/resize_cache/iblock/253/3ufb4t0ksqj67xu6diiylvm3o2cx09d1/800_800_1/lemon-cake-1.jpeg" alt="Image-HasTech">
+                        <a class="lightbox-image" 
+                           data-fancybox="gallery" 
+                           href="https://anyor.bitrix24.shop/upload/resize_cache/iblock/253/3ufb4t0ksqj67xu6diiylvm3o2cx09d1/800_800_1/lemon-cake-1.jpeg">
+                          <img src="https://anyor.bitrix24.shop/upload/resize_cache/iblock/253/3ufb4t0ksqj67xu6diiylvm3o2cx09d1/800_800_1/lemon-cake-1.jpeg" 
+                               alt="@Model.Product.Description @image.Id">
                         </a>
                       </div>
                     </div>

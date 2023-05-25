@@ -14,8 +14,8 @@ public class ProductModel : PageModel
         _productStorage = productStorage;
     }
 
-    public async Task OnGet()
+    public async Task OnGet(int id)
     {
-        this.Product = await _productStorage.GetProduct(142);
+        this.Product = await _productStorage.GetProduct(id);
     }
 }

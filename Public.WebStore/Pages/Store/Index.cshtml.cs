@@ -10,8 +10,8 @@ namespace Public.WebStore.Pages.Store
 
         public void OnGet(string? category)
         {
-            if (category == "sweets") CategoryName = "Сладости";
-            if (category == "cakes") CategoryName = "Тортики";
+            if (category == "sweets") CategoryName = "РЎР»Р°РґРѕСЃС‚Рё";
+            if (category == "cakes") CategoryName = "РўРѕСЂС‚РёРєРё";
 
             ViewData["Title"] = CategoryName;
         }
