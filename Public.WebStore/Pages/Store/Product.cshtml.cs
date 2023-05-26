@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProductStorage.Abstract;
 using ProductStorage.CommonModels;
+using TinkoffAcquiringSdk;
 
 namespace Public.WebStore.Pages.Store;
 
@@ -17,5 +18,6 @@ public class ProductModel : PageModel
     public async Task OnGet(int id)
     {
         this.Product = await _productStorage.GetProduct(id);
+        AcquiringApiClient client = new AcquiringApiClient("test", "test");
     }
 }
