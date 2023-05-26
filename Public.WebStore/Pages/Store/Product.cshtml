@@ -8,44 +8,40 @@
     <section class="product-single-area">
       <div class="container">
         <div class="row">
-        <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
-          <div class="single-product-slider">
-            <div class="single-product-thumb">
-              <div class="swiper-container single-product-thumb-slider">
-                <div class="swiper-wrapper">
-                  @foreach (var image in Model.Product.Images)
-                  {
-                    <div class="swiper-slide zoom_ zoom-hover_">
-                      <div class="thumb-item">
-                        <a class="lightbox-image" 
-                           data-fancybox="gallery" 
-                           href="https://anyor.bitrix24.shop/upload/resize_cache/iblock/253/3ufb4t0ksqj67xu6diiylvm3o2cx09d1/800_800_1/lemon-cake-1.jpeg">
-                          <img src="https://anyor.bitrix24.shop/upload/resize_cache/iblock/253/3ufb4t0ksqj67xu6diiylvm3o2cx09d1/800_800_1/lemon-cake-1.jpeg" 
-                               alt="@Model.Product.Description @image.Id">
-                        </a>
-                      </div>
-                    </div>
-                  }
+          <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+            <div class="single-product-slider">
+              <div class="single-product-thumb">
+                <div class="swiper-container single-product-thumb-slider">
+                  <div class="swiper-wrapper">
+                    @foreach (var img in Model.Product.Images)
+                    {
+                      <div class="swiper-slide zoom_ zoom-hover_">
+                        <div class="thumb-item">
+                          <a class="lightbox-image" data-fancybox="gallery" href="@img.FullUrl">
+                            <img src="@img.FullUrl" alt="Image-HasTech">
+                          </a>
+                        </div>
+                      </div>  
+                    }
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="single-product-nav">
-              <div class="swiper-container single-product-nav-slider">
-                <div class="swiper-wrapper">
-                  @foreach (var image in Model.Product.Images)
-                  {
-                    continue;
-                    <div class="swiper-slide">
-                      <div class="nav-item">
-                        <img src="@image.FullUrl" alt="@Model.Product.Title @image.Id">
-                      </div>
-                    </div>
-                  }
+              <div class="single-product-nav">
+                <div class="swiper-container single-product-nav-slider">
+                  <div class="swiper-wrapper">
+                    @foreach (var img in Model.Product.Images)
+                    {
+                      <div class="swiper-slide">
+                        <div class="nav-item">
+                          <img src="@img.PreviewUrl" alt="Image-HasTech">
+                        </div>
+                      </div>  
+                    }
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
           <div class="col-lg-6">
             <div class="single-product-info">
               <h4 class="title">@Model.Product.Title</h4>
@@ -74,6 +70,7 @@
             </div>
           </div>
         </div>
+        <div class="row" style="margin-top: 30px"></div>
       </div>
     </section>
     <!--== End Shop Area ==-->
