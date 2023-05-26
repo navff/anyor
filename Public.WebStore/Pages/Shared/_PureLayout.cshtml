@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewBag.Title</title>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" href="~/img/favicon.png" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!--== Bootstrap CSS ==-->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--== Font-awesome Icons CSS ==-->
+    <link href="/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--== Pe Icon 7 Min Icons CSS ==-->
+    <link href="/css/pe-icon-7-stroke.min.css" rel="stylesheet"/>
+    <!--== Ionicons CSS ==-->
+    <link href="/css/ionicons.css" rel="stylesheet"/>
+    <!--== Animate CSS ==-->
+    <link href="/css/animate.css" rel="stylesheet"/>
+    <!--== Aos CSS ==-->
+    <link href="/css/aos.css" rel="stylesheet"/>
+    <!--== FancyBox CSS ==-->
+    <link href="/css/jquery.fancybox.min.css" rel="stylesheet"/>
+    <!--== Slicknav CSS ==-->
+    <link href="/css/slicknav.css" rel="stylesheet"/>
+    <!--== Swiper CSS ==-->
+    <link href="/css/swiper.min.css" rel="stylesheet"/>
+    <!--== Slick CSS ==-->
+    <link href="/css/slick.css" rel="stylesheet"/>
+    <!--== Main Style CSS ==-->
+    <link href="/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper home-default-wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!--== End Preloader Content ==-->
+
+  <!--== Start Header Wrapper ==-->
+  <header class="header-wrapper">
+    <div class="header-middle">
+      <div class="container">
+        <div class="row row-gutter-0 align-items-center">
+          <div class="col-12">
+            <div class="header-align">
+              <div class="header-align-left">
+                <div class="header-logo-area">
+                  <a href="#">
+                    <img class="logo-main" src="/img/logo.png" alt="Logo" />
+                    <img class="logo-light" src="/img/logo.png" alt="Logo" />
+                  </a>
+                </div>
+              </div>
+              <div class="header-align-right">
+                <a href="tel://+79211357452"><i class="fa fa-phone"></i>+7-921-135-7452</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-area header-default sticky-header">
+      <div class="container">
+        <div class="row row-gutter-0 align-items-center">
+          <div class="col-4 col-sm-6 col-lg-2">
+            <div class="header-logo-area">
+              <a href="#">
+                <img class="logo-main" src="/img/logo.png" alt="Logo" />
+                <img class="logo-light" src="/img/logo.png" alt="Logo" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Title Area ==-->
+    <section class="page-title-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 m-auto">
+            <div class="page-title-content text-center">
+              <h2 class="title">@ViewBag.Title</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Page Title Area ==-->
+
+    @RenderBody()
+
+  </main>
+
+  <!--== Start Footer Area Wrapper ==-->
+  <footer class="footer-area default-style" >
+    <div class="footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-lg-3">
+            <div class="widget-item item-style3">
+              <div class="about-widget">
+                <p>ИП Варнавский Владиимир Николаевич</p>
+                <p>ИНН: 352826429326, ул. Андреевская, 6</p>
+                <small><a href="https://vk.com/anyor_sweets">Группа ВК</a></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-shape bg-img" data-bg-img="/img/photos/footer1.png"></div>
+  </footer>
+  <!--== End Footer Area Wrapper ==-->
+  
+  <!--== Scroll Top Button ==-->
+  <div class="scroll-to-top"><span class="fa fa-angle-double-up"></span></div>
+
+
+</div>
+
+<!--=======================Javascript============================-->
+
+<!--=== Modernizr Min Js ===-->
+<script src="/js/modernizr.js"></script>
+<!--=== jQuery Min Js ===-->
+<script src="/js/jquery-main.js"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="/js/jquery-migrate.js"></script>
+<!--=== Popper Min Js ===-->
+<script src="/js/popper.min.js"></script>
+<!--=== Bootstrap Min Js ===-->
+<script src="/js/bootstrap.min.js"></script>
+<!--=== jquery Appear Js ===-->
+<script src="/js/jquery.appear.js"></script>
+<!--=== jquery Swiper Min Js ===-->
+<script src="/js/swiper.min.js"></script>
+<!--=== jquery Fancybox Min Js ===-->
+<script src="/js/fancybox.min.js"></script>
+<!--=== jquery Aos Min Js ===-->
+<script src="/js/aos.min.js"></script>
+<!--=== jquery Slicknav Js ===-->
+<script src="/js/jquery.slicknav.js"></script>
+<!--=== jquery Countdown Js ===-->
+<script src="/js/jquery.countdown.min.js"></script>
+<!--=== jquery Tippy Js ===-->
+<script src="/js/tippy.all.min.js"></script>
+<!--=== Isotope Min Js ===-->
+<script src="/js/isotope.pkgd.min.js"></script>
+<!--=== Parallax Min Js ===-->
+<script src="/js/parallax.min.js"></script>
+<!--=== Slick  Min Js ===-->
+<script src="/js/slick.min.js"></script>
+<!--=== jquery Wow Min Js ===-->
+<script src="/js/wow.min.js"></script>
+<!--=== jquery Zoom Min Js ===-->
+<script src="/js/jquery-zoom.min.js"></script>
+
+<!--=== Custom Js ===-->
+<script src="/js/custom.js"></script>
+
+</body>
+
+</html>
+
+

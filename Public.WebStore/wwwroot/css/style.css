@@ -636,16 +636,16 @@ table p {
   left: 0;
 }
 .page-title-area .page-title-content {
-  padding: 134px 0 137px;
+  padding: 90px 0 90px;
 }
 @media only screen and (max-width: 991px) {
   .page-title-area .page-title-content {
-    padding: 134px 0 110px;
+    padding: 90px 0 90px;
   }
 }
 @media only screen and (max-width: 767px) {
   .page-title-area .page-title-content {
-    padding: 105px 0 80px;
+    padding: 55px 0 30px;
   }
 }
 .page-title-area .page-title-content .title {
