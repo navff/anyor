@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
@@ -17,6 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Anyor.Domains.Orders\Anyor.Domains.Orders.csproj" />
       <ProjectReference Include="..\Anyor.Domains.Users\Anyor.Domains.Users.csproj" />
       <ProjectReference Include="..\Web.Api\Web.Api.csproj" />
     </ItemGroup>

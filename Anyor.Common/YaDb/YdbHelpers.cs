@@ -1,4 +1,5 @@
-﻿using Ydb.Sdk.Value;
+﻿using Ydb;
+using Ydb.Sdk.Value;
 
 namespace Anyor.Common;
 
@@ -30,7 +31,17 @@ public static class YdbHelpers
     {
         try
         {
-            byte[]? bytes = value.GetOptionalString();
+            byte[]? bytes;
+            
+            if (value.TypeId == YdbTypeId.OptionalType)
+            {
+                bytes = value.GetOptionalString();
+            }
+            else
+            {
+                bytes = value.GetString();
+            }
+            
             return bytes == null 
                 ? null 
                 : System.Text.Encoding.Default.GetString(bytes);
@@ -56,7 +67,10 @@ public static class YdbHelpers
     
     public static Guid ToGuidField(this YdbValue value, string fieldName)
     {
-        return Guid.Parse(value.ToStringField(fieldName));
+        var stringValue = value.ToStringOptionalField(fieldName);
+        return string.IsNullOrEmpty(stringValue) 
+            ? Guid.Empty 
+            : Guid.Parse(stringValue);
     }
     
     public static Guid ToGuidOptionalField(this YdbValue value, string fieldName)

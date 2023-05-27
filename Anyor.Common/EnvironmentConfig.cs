@@ -20,6 +20,10 @@ public class EnvironmentConfig
     public string BitrixWebhookKey { get; private set; }
     
     public string BitrixBaseUrl { get; private set; }
+    
+    public string TinkoffTerminalKey { get; private set; }
+    
+    public string TinkoffTerminalPassword { get; private set; }
 
     public EnvironmentConfig()
     {
@@ -52,6 +56,8 @@ public class EnvironmentConfig
             this.YaSaKeyFilePath = config.YaSaKeyFilePath;
             this.BitrixWebhookKey = config.BitrixWebhookKey;
             this.BitrixBaseUrl = config.BitrixBaseUrl;
+            this.TinkoffTerminalKey = config.TinkoffTerminalKey;
+            this.TinkoffTerminalPassword = config.TinkoffTerminalPassword;
         }
         else
         {
@@ -87,4 +93,8 @@ public class EnvironmentConfigJson
     public string BitrixWebhookKey { get; set; }
     
     public string BitrixBaseUrl { get; set; }
+    
+    public string TinkoffTerminalKey { get; set; }
+    
+    public string TinkoffTerminalPassword { get; set; }
 }
