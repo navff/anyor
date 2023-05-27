@@ -5,9 +5,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY . .
 ARG TOKEN_GITHUB
-ENV TOKEN = TOKEN_GITHUB
-RUN echo $TOKEN
-RUN dotnet nuget add source https://nuget.pkg.github.com/navff/index.json --name="github" --username navff --valid-authentication-types basic --store-password-in-clear-text --password ${TOKEN}
+RUN dotnet nuget add source https://nuget.pkg.github.com/navff/index.json --name="github" --username navff --valid-authentication-types basic --store-password-in-clear-text --password ${TOKEN_GITHUB}
 RUN dotnet restore "Public.WebStore/Public.WebStore.csproj"
 COPY . .
 WORKDIR "/src/Public.WebStore"
