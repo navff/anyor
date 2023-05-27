@@ -4,13 +4,15 @@ using Ydb.Sdk.Table;
 using Ydb.Sdk.Value;
 using Ydb.Sdk.Yc;
 
-namespace Anyor.Common;
+namespace Anyor.Common.YaDb;
 
 public class YaDb
 {
     private Driver _driver;
-    public YaDb()
+    private EnvironmentConfig _environmentConfig;
+    public YaDb(EnvironmentConfig environmentConfig)
     {
+        _environmentConfig = environmentConfig;
         Init().Wait();
     }
 
@@ -18,11 +20,10 @@ public class YaDb
     {
         Stopwatch sw = new Stopwatch();
         sw.Start();
-        var environmentConfig = new EnvironmentConfig();
         var serviceAccountProvider = new ServiceAccountProvider(
-            keyId: environmentConfig.YaKeyId,
-            serviceAccountId: environmentConfig.YaServiceAccountId,
-            privateKey: environmentConfig.YaPrivateKey
+            keyId: _environmentConfig.YaKeyId,
+            serviceAccountId: _environmentConfig.YaServiceAccountId,
+            privateKey: _environmentConfig.YaPrivateKey
         );
         Console.WriteLine("START WAITING YDB");
         await serviceAccountProvider.Initialize();
@@ -30,8 +31,8 @@ public class YaDb
         
         
         var config = new DriverConfig(
-            endpoint: environmentConfig.YdbEndpoint,
-            database: environmentConfig.YdbDbAddress,
+            endpoint: _environmentConfig.YdbEndpoint,
+            database: _environmentConfig.YdbDbAddress,
             credentials:  serviceAccountProvider,
             defaultTransportTimeout: TimeSpan.FromSeconds(30),
             defaultStreamingTransportTimeout: TimeSpan.FromSeconds(30)

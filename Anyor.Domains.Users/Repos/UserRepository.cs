@@ -1,4 +1,5 @@
 ﻿using Anyor.Common;
+using Anyor.Common.YaDb;
 
 namespace Anyor.Domains.Users.Repos;
 

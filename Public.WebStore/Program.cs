@@ -1,6 +1,7 @@
 ﻿using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using Anyor.Common;
+using Anyor.Common.YaDb;
 using Anyor.Domains.Orders.Repos;
 using Anyor.Domains.Orders.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -29,9 +30,8 @@ builder.Services.AddRazorPages(options =>
     })
     .AddRazorRuntimeCompilation(options => options.FileProviders.Add(new PhysicalFileProvider(directory)));
 var environmentConfig = new EnvironmentConfig();
-
-builder.Services.AddSingleton(typeof(YaDb));
 builder.Services.AddSingleton(environmentConfig);
+builder.Services.AddSingleton(typeof(YaDb));
 builder.Services.AddSingleton(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic }));
 builder.Services.AddSingleton(new HttpClient());
 builder.Services.AddScoped<IProductStorage, BitrixProductStorage>();
