@@ -53,7 +53,7 @@ jobs:
             AUTH_TOKEN_GITHUB: ${{ secrets.AUTH_TOKEN_GITHUB }}
           working-directory: .
           run: |
-            docker build -t cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }} -f ./Public.WebStore/Dockerfile .
+            docker build -t cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }} -f ./Public.WebStore/Dockerfile . -build-arg TOKEN_GITHUB=${{ secrets.AUTH_TOKEN_GITHUB }}
             docker push     cr.yandex/crp4odt1er9cmqarghdb/public-web-store:${{ github.sha }}  
             
         - name: Deploy Admin.Web
