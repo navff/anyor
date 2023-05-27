@@ -1,4 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+RUN apt-get update
+RUN apt-get install -y libc6-dev 
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
