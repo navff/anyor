@@ -9,6 +9,17 @@
     <section class="product-single-area">
       <div class="container">
         <div class="row">
+          <div class="single-product-info" style="margin-top: 0px">
+            <form method="POST">
+              <div class="quick-product-action justify-content-center">
+                <div class="action-top">
+                  <button class="btn btn-theme">Оплатить @Model.Product.Price ₽</button>
+                </div>
+              </div>
+            </form>  
+          </div>
+        </div>
+        <div class="row">
           <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
             <div class="single-product-slider">
               <div class="single-product-thumb">
@@ -22,7 +33,7 @@
                             <img src="@img.FullUrl" alt="Image-HasTech">
                           </a>
                         </div>
-                      </div>  
+                      </div>
                     }
                   </div>
                 </div>
@@ -36,7 +47,7 @@
                         <div class="nav-item">
                           <img src="@img.PreviewUrl" alt="Image-HasTech">
                         </div>
-                      </div>  
+                      </div>
                     }
                   </div>
                 </div>
@@ -49,7 +60,7 @@
               <div class="prices">
                 <span class="price">@Model.Product.Price ₽</span>
               </div>
-              <div class="single-product-featured">
+              <div class="single-product-featured .d-sm-none .d-md-block">
                 <ul>
                   <li><i class="fa fa-check"></i> Вкусно</li>
                   <li><i class="fa fa-check"></i> Полезно</li>
@@ -60,11 +71,11 @@
               <form method="POST">
                 <div class="quick-product-action">
                   <div class="action-top">
-                    <button class="btn btn-theme">Оплатить</button>
+                    <button class="btn btn-theme">Оплатить @Model.Product.Price ₽</button>
                   </div>
                 </div>
               </form>
-                            
+
               <div class="widget">
                 <h3 class="title">Артикул:</h3>
                 <div class="widget-tags">

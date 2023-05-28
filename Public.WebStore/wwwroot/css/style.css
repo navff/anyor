@@ -5708,11 +5708,11 @@ table p {
 }
 
 .product-single-area {
-  padding: 110px 0 0;
+  padding: 60px 0 0;
 }
 @media only screen and (max-width: 991px) {
   .product-single-area {
-    padding: 80px 0 0;
+    padding: 40px 0 0;
   }
 }
 
@@ -6700,6 +6700,7 @@ table p {
 @media only screen and (max-width: 479.98px) {
   .single-product-info .single-product-featured {
     margin-bottom: 20px;
+    display: none;
   }
 }
 .single-product-info .single-product-featured ul {
@@ -9481,4 +9482,8 @@ table p {
     background-color: #535353;
     padding: 22px 22px 20px;
   }
+}
+
+lottie-player {
+  margin: 0 auto;
 }

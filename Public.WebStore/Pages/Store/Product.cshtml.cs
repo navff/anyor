@@ -41,8 +41,8 @@ public class ProductModel : PageModel
         var baseUrl = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
         order = await _paymentOrderService.CreateBankPaymentOrder(
             order,
-            baseUrl,
-            baseUrl);
+            baseUrl + "/payment/success",
+            baseUrl + "/payment/error");
         if (string.IsNullOrEmpty(order.PaymentUrl))
             throw new ExternalException("Cannot create Payment Order");
             
