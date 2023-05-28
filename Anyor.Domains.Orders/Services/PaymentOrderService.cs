@@ -28,7 +28,7 @@ public class PaymentOrderService
             OrderId = paymentOrder.Id.ToString(),
             ChargeFlag = false,
             CustomerKey = paymentOrder.FullCustomerName,
-            PayForm = "Checkout",
+           // PayForm = "Checkout",
             Recurrent = false,
             SuccessURL = successUrl,
             FailURL = failUrl
