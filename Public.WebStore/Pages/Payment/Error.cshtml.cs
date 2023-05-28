@@ -4,8 +4,10 @@ namespace Public.WebStore.Pages.Payment;
 
 public class Error : PageModel
 {
-    public void OnGet()
+    public int? ProductId;
+    
+    public void OnGet(int? id)
     {
-        
+        ProductId = id;
     }
 }

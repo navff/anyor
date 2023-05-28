@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id?}"
 @model Public.WebStore.Pages.Payment.Error
 
 @{
@@ -14,7 +14,7 @@
                     <lottie-player
                             src="https://assets6.lottiefiles.com/packages/lf20_FQcOBH.json"
                             background="transparent"
-                            speed="1"
+                            speed="0.6"
                             style="width: 300px; height: 300px;"
                             autoplay>
                         </lottie-player>
@@ -23,7 +23,13 @@
                     <div class="px-50 pb-50">
                         <h3 style="text-align: center">Во время оплаты что-то пошло не так.
                             <br/>Попробуйте оплатить другим способом. </h3>
-        
+                        @if (Model.ProductId.HasValue)
+                        {
+                            <div class="row mx-4 my-4 justify-content-center">
+                                <a href="@Url.Content($"~/store/product/{Model.ProductId}")" class="btn btn-lg btn-info">← Вернуться к товару и попробовать снова</a>
+                            </div>
+                        }
+
                         <p style="text-align: center">
                             Если ничего не получается, переводите денежку по номеру телефона: +79211357452 (Надежда В.)
                         </p>

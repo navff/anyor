@@ -42,7 +42,7 @@ public class ProductModel : PageModel
         order = await _paymentOrderService.CreateBankPaymentOrder(
             order,
             baseUrl + "/payment/success",
-            baseUrl + "/payment/error");
+            baseUrl + $"$/payment/error/{id}");
         if (string.IsNullOrEmpty(order.PaymentUrl))
             throw new ExternalException("Cannot create Payment Order");
             
