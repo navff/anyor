@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="navff.tinkoff.sdk" Version="1.0.5" />
+      <PackageReference Include="navff.tinkoff.sdk" Version="1.0.6" />
     </ItemGroup>
 
 </Project>

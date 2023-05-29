@@ -10,7 +10,6 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
       <PackageReference Include="MyTested.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
-      <PackageReference Include="Navff.Tinkoff.Sdk" Version="1.0.5" />
     </ItemGroup>
 
     <ItemGroup>

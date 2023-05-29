@@ -9,7 +9,7 @@ namespace Anyor.Tests;
 
 public class OrderTests
 {
-    private readonly PaymentOrderRepository _orderRepository = new (new YaDb());
+    private readonly PaymentOrderRepository _orderRepository = new (new YaDb(new EnvironmentConfig()));
     
     [SetUp]
     public void Setup()

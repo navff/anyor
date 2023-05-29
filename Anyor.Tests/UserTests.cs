@@ -7,7 +7,7 @@ namespace Anyor.Tests;
 
 public class UserTests
 {
-    private UserRepository _userRepository = new UserRepository(new YaDb());
+    private UserRepository _userRepository = new UserRepository(new YaDb(new EnvironmentConfig()));
     
     [SetUp]
     public void Setup()
