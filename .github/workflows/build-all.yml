@@ -84,7 +84,7 @@ jobs:
             revision-memory: 128Mb
             revision-core-fraction: 5
             revision-concurrency: 8
-            revision-provisioned: 0
+            revision-provisioned: 1
             revision-image-url: cr.yandex/crp4odt1er9cmqarghdb/webapi:${{ github.sha }}
             revision-execution-timeout: 60
             revision-env: YA_OBJECT_STORAGE_SECRET_KEY=${{ secrets.YA_OBJECT_STORAGE_SECRET_KEY }}
