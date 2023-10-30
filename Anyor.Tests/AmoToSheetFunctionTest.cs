@@ -36,9 +36,9 @@ public class AmoToSheetFunctionTest
     }
 
     [Test]
-    public void GetLeadTest()
+    public async Task GetLeadTest()
     {
-        var lead = _amoService.GetAmoLead(9997167);
+        var lead = await _amoService.GetAmoLead(9997167);
         Assert.That(lead.Embedded.Contacts.First().Id, Is.EqualTo(13180131));
     }
     

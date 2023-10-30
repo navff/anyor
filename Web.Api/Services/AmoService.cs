@@ -15,7 +15,7 @@ namespace Api.Services
             _httpClient = httpClient ?? new HttpClient();
         }
 
-        public AmoLead GetAmoLead(long leadId)
+        public async Task<AmoLead> GetAmoLead(long leadId)
         {
             var url = $"https://anyor.amocrm.ru/api/v4/leads/{leadId}?with=contacts";
             
@@ -23,7 +23,7 @@ namespace Api.Services
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", _amoAccessToken);
             
-            using var response =  httpClient.GetAsync(url).Result;
+            var response =  await httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode) 
                 throw new Exception("Error while getting Amo lead");
             

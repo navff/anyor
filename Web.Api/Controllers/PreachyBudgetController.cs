@@ -31,31 +31,29 @@ public class PreachyBudgetController: ControllerBase
         return await AmoHookHandle(request);
     }
     
+    [HttpPost("AmoHookHandle/private")]
     public async Task<IActionResult> AmoHookHandle(string request)
     {
         var hook = ParseHook(request);
 
         Console.WriteLine("LEAD_ID: " + hook.LeadId);
 
-        Task.Run(() =>
+        var lead = await _amoService.GetAmoLead(hook.LeadId);
+        var contact = _amoService.GetAmoContact(lead.Embedded.Contacts.First().Id);
+        Console.WriteLine("CONTACT_NAME: " + contact.Name);
+
+        var amount = lead.CustomFieldsValues
+            .FirstOrDefault(f => f.FieldName == "tinkoff_amount")?.Values
+            .FirstOrDefault()?.Value;
+
+        var sheetDonationService = new SheetDonationsAddService(_envConfig.GoogleCredsJson);
+        sheetDonationService.AddNewRow(new Donation
         {
-            var lead = _amoService.GetAmoLead(hook.LeadId);
-            var contact = _amoService.GetAmoContact(lead.Embedded.Contacts.First().Id);
-            Console.WriteLine("CONTACT_NAME: " + contact.Name);
-
-            var amount = lead.CustomFieldsValues
-                .FirstOrDefault(f => f.FieldName == "tinkoff_amount")?.Values
-                .FirstOrDefault()?.Value;
-
-            var sheetDonationService = new SheetDonationsAddService(_envConfig.GoogleCredsJson);
-            sheetDonationService.AddNewRow(new Donation
-            {
-                AmoLeadId = lead.Id,
-                Amount = amount,
-                Date = DateTime.Now.AddHours(3),
-                ContactName = contact.Name
-            });  
-        });
+            AmoLeadId = lead.Id,
+            Amount = amount,
+            Date = DateTime.Now.AddHours(3),
+            ContactName = contact.Name
+        });  
 
         return Ok();
     }
