@@ -14,9 +14,11 @@ public class PreachyBudgetController: ControllerBase
 {
     private readonly AmoService _amoService;
     private readonly EnvironmentConfig _envConfig;
+    private readonly IBackgroundJobClient _backgroundJobClient;
 
-    public PreachyBudgetController()
+    public PreachyBudgetController(IBackgroundJobClient backgroundJobClient)
     {
+        _backgroundJobClient = backgroundJobClient;
         _envConfig = new EnvironmentConfig();
         _amoService = new AmoService(_envConfig.AmoTokenConfig.AccessToken);
     }
@@ -29,7 +31,7 @@ public class PreachyBudgetController: ControllerBase
         var streamReader = new StreamReader(Request.Body);
         string request = await streamReader.ReadToEndAsync();
 
-        BackgroundJob.Enqueue(() => AmoHookHandle(request));
+        _backgroundJobClient.Enqueue(() => AmoHookHandle(request));
         return Ok();
     }
     
