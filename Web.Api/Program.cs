@@ -14,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHangfire(c => c.UseMemoryStorage());
+builder.Services.AddHangfireServer();
 
 var app = builder.Build();
 
