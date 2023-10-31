@@ -3,6 +3,7 @@ using AmoToSheetFunc;
 using AmoToSheetFunc.Dtos;
 using Api.Common;
 using Api.Services;
+using Hangfire;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
@@ -26,9 +27,10 @@ public class PreachyBudgetController: ControllerBase
         if (!Request.Body.CanRead) return BadRequest();
         
         var streamReader = new StreamReader(Request.Body);
-        var request = await streamReader.ReadToEndAsync();
+        string request = await streamReader.ReadToEndAsync();
 
-        return await AmoHookHandle(request);
+        BackgroundJob.Enqueue(() => AmoHookHandle(request));
+        return Ok();
     }
     
     [HttpPost("AmoHookHandle/private")]
@@ -45,7 +47,7 @@ public class PreachyBudgetController: ControllerBase
         var amount = lead.CustomFieldsValues
             .FirstOrDefault(f => f.FieldName == "tinkoff_amount")?.Values
             .FirstOrDefault()?.Value;
-
+        
         var sheetDonationService = new SheetDonationsAddService(_envConfig.GoogleCredsJson);
         sheetDonationService.AddNewRow(new Donation
         {
@@ -57,6 +59,7 @@ public class PreachyBudgetController: ControllerBase
 
         return Ok();
     }
+    
     
     private AmoLeadStatusHook ParseHook(string valueToConvert)
     {

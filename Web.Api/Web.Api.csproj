@@ -11,6 +11,7 @@
     <ItemGroup>
         <PackageReference Include="AspNetCore.Yandex.ObjectStorage" Version="0.2.2" />
         <PackageReference Include="Google.Apis.Sheets.v4" Version="1.60.0.2979" />
+        <PackageReference Include="Hangfire" Version="1.8.6" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
