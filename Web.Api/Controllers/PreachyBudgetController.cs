@@ -33,7 +33,7 @@ public class PreachyBudgetController: ControllerBase
         return Ok();
     }
     
-    [HttpPost("AmoHookHandle/private")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public async Task<IActionResult> AmoHookHandle(string request)
     {
         var hook = ParseHook(request);
